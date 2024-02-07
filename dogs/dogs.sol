@@ -478,7 +478,7 @@ contract ERC721A is IERC721A {
      * To change the starting token ID, please override this function.
      */
     function _startTokenId() internal view virtual returns (uint256) {
-        return 5000;
+        return 1;
     }
 
     /**
@@ -2998,7 +2998,7 @@ contract NewGG is Ownable, ERC721A, ERC721AQueryable, RevokableDefaultOperatorFi
     virtual
     returns (uint256)
     {
-        return 1;
+        return 5001;
     }
 
     // Misc
