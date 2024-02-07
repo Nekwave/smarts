@@ -37,9 +37,9 @@ contract stakingToken {
     } 
     function calcRewards(address _user, address _tokenContract) private returns(uint256) {
         if (endedTimestamp > 0) {
-            return ((endedTimestamp - tokens[_user][_tokenContract].timestamp)*smartsRewardsPerInterval[_tokenContract]/interval)*tokens[_user][_tokenContract].quantity;
+            return tokens[_user][_tokenContract].quantity * (endedTimestamp - tokens[_user][_tokenContract].timestamp) * smartsRewardsPerInterval[_tokenContract]/interval;
         }
-        return ((block.timestamp - tokens[_user][_tokenContract].timestamp)*smartsRewardsPerInterval[_tokenContract]/interval)*tokens[_user][_tokenContract].quantity;
+        return tokens[_user][_tokenContract].quantity * (block.timestamp - tokens[_user][_tokenContract].timestamp) * smartsRewardsPerInterval[_tokenContract]/interval;
     }
     
 
